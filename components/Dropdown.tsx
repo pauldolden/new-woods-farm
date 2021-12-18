@@ -30,7 +30,7 @@ function classNames(...classes) {
 
 export const Dropdown = (props: Props) => {
   return (
-    <Popover className="relative">
+    <Popover className="relative z-50">
       {({ open }) => (
         <>
           <Popover.Button
