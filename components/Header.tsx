@@ -1,16 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import { Dropdown } from "./Dropdown";
 
 interface Props {}
 
 export const Header = (props: Props) => {
   /* This example requires Tailwind CSS v2.0+ */
   const navigation = [
-    { name: "Home", href: "/" },
+    // { name: "Home", href: "/" },
     { name: "News", href: "/news" },
-    { name: "Our Story", href: "/our-story" },
-    { name: "Our Sheep", href: "/our-sheep/" },
-    { name: "Coloured Ryelands", href: "/coloured-ryelands" },
     { name: "Made At New Woods", href: "/made-at-new-woods" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
@@ -28,6 +26,7 @@ export const Header = (props: Props) => {
               </div>
             </Link>
             <div className="hidden ml-10 space-x-8 lg:flex">
+              <Dropdown />
               {navigation.map((link) => (
                 <Link key={link.name} href={link.href}>
                   <p className="text-base font-medium text-white hover:text-green-50 cursor-pointer">

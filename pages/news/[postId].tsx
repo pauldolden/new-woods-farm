@@ -122,7 +122,9 @@ const Post = ({ data }: Props) => {
               </span>
             </h1>
             {/* @ts-ignore */}
-            <ContentfulRichText data={data.content.json} />
+            <div className="mt-8 text-xl text-gray-500 leading-8">
+              <ContentfulRichText data={data.content.json} />
+            </div>
           </div>
         </div>
       </div>
