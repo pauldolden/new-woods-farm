@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Logo";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Logo"), url(/fonts/logo.ttf) format("truetype");
+  font-display: swap;
+}
