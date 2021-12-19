@@ -133,7 +133,9 @@ const Contact = ({ data }: Props) => {
                     aria-hidden="true"
                   />
                   <span className="ml-3">
-                    {data?.contactInformation?.phoneNumber}
+                    <a href={`tel:${data?.contactInformation?.phoneNumber}`}>
+                      {data?.contactInformation?.phoneNumber}
+                    </a>
                   </span>
                 </dd>
                 <dt>
@@ -145,7 +147,12 @@ const Contact = ({ data }: Props) => {
                     aria-hidden="true"
                   />
                   <span className="ml-3">
-                    {data?.contactInformation?.emailAddress}
+                    <a
+                      href={`mailto:${data?.contactInformation?.emailAddress}`}
+                      target="_blank"
+                    >
+                      {data?.contactInformation?.emailAddress}
+                    </a>
                   </span>
                 </dd>
               </dl>
@@ -157,8 +164,9 @@ const Contact = ({ data }: Props) => {
                 Send us a message
               </h3>
               <form
-                action="#"
+                name="contact"
                 method="POST"
+                data-netlify="true"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
                 <div>

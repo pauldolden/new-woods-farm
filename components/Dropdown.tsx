@@ -22,6 +22,11 @@ const links = [
     description: "More About these wonderful animals.",
     href: "/coloured-ryelands",
   },
+  {
+    name: "Show Results",
+    description: "Some of the results from our sheep at shows across the UK.",
+    href: "/show-results",
+  },
 ];
 
 function classNames(...classes) {
