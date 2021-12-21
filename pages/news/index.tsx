@@ -41,7 +41,7 @@ const index = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getServerSideProps({ params, preview }) {
+export async function getStaticProps({ params, preview }) {
   const articles = await fetchAllNewsArticles(preview);
   const pageData = await fetchNewsPageData(preview);
 

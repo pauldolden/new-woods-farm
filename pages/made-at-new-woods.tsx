@@ -38,7 +38,7 @@ const madeatnewwoods = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getServerSideProps({ params, preview }) {
+export async function getStaticProps({ params, preview }) {
   const pageData = await fetchCraftingPageData(preview);
 
   return {

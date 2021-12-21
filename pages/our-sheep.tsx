@@ -41,7 +41,7 @@ const oursheep = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getServerSideProps({ params, preview }) {
+export async function getStaticProps({ params, preview }) {
   const sheep = await fetchAllSheepProfiles(preview);
   const pageData = await fetchOurSheepPageData(preview);
 

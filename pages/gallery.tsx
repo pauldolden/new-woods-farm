@@ -79,7 +79,7 @@ const gallery = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getServerSideProps({ params, preview }) {
+export async function getStaticProps({ params, preview }) {
   const images = await fetchAllImages(preview);
   const pageData = await fetchGalleryPageData(preview);
 
