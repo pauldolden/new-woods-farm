@@ -37,7 +37,7 @@ export const Article = ({ data }: Props) => {
                 {data?.title}
               </p>
               <div className="mt-3 text-base text-gray-500">
-                <ContentfulRichText data={data.content.json} />
+                <ContentfulRichText data={data.description.json} />
               </div>
             </div>
           </div>
