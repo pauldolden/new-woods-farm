@@ -32,7 +32,7 @@ const index = ({ data, pageData }: Props) => {
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {data.items.map((article) => (
-              <Article data={article} />
+              <Article data={article} key={article.sys.id} />
             ))}
           </div>
         </div>
@@ -41,7 +41,7 @@ const index = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const articles = await fetchAllNewsArticles(preview);
   const pageData = await fetchNewsPageData(preview);
 

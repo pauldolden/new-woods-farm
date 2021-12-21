@@ -93,25 +93,7 @@ const ContentPage = ({ data }: Props) => {
   );
 };
 
-export async function getStaticPaths({ preview = false }) {
-  const pages = await fetchContentPageSlugs(preview);
-
-  return {
-    paths: pages.items.map((page) => {
-      const pageTitle = page.pageTitle;
-      const slug = pageTitle.toLowerCase().replaceAll(" ", "-");
-
-      return {
-        params: {
-          slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const pages = await fetchContentPageSlugs(preview);
   const currentPage = pages.items.filter(
     (page) => page.pageTitle.toLowerCase().replaceAll(" ", "-") === params.slug

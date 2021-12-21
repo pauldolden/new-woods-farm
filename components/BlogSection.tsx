@@ -25,7 +25,7 @@ const BlogSection = ({ data }: Props) => {
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {data?.latestPostsCollection?.items?.map((post) => (
-            <Article data={post} />
+            <Article data={post} key={post.sys.id} />
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { SheepProfilesSection } from "../types/HomePage";
 import { SheepProfile } from "./SheepProfile";
+import { ContentfulRichText } from "./ContentfulRichText";
 dayjs.extend(relativeTime);
 
 interface Props {
@@ -18,18 +19,16 @@ export const MeetSheep = ({ data }: Props) => {
             <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
               {data.sectionTitle}
             </h2>
-            <p className="text-xl text-gray-300">
-              {data.sectionText.json.content.map((item) =>
-                item.content.map((item) => item.value)
-              )}
-            </p>
+            <div className="text-xl text-gray-300">
+              <ContentfulRichText data={data.sectionText.json} />
+            </div>
           </div>
           <ul
             role="list"
             className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
           >
             {data?.sheepProfilesCollection.items?.map((sheep) => (
-              <SheepProfile data={sheep} />
+              <SheepProfile data={sheep} key={sheep.name} />
             ))}
           </ul>
         </div>

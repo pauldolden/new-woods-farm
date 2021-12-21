@@ -24,7 +24,7 @@ const index = ({ data }: Props) => {
   );
 };
 
-export async function getStaticProps({ preview = false }) {
+export async function getServerSideProps({ preview = false }) {
   const data = await fetchHomePage(preview);
 
   return {

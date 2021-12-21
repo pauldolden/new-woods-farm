@@ -148,7 +148,7 @@ export async function getStaticPaths({ preview = false }) {
   };
 }
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const article = await fetchNewsArticle(params.postId, preview);
 
   return {

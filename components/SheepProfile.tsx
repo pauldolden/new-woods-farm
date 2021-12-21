@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import React from "react";
 import { SheepProfileData } from "../types/AllSheepProfiles";
+import { ContentfulRichText } from "./ContentfulRichText";
 
 interface Props {
   data: SheepProfileData;
@@ -9,7 +10,7 @@ interface Props {
 export const SheepProfile = ({ data }: Props) => {
   return (
     <div
-      key={data.name}
+      key={data.name + Math.random()}
       className="py-10 px-6 bg-green-800 text-center rounded-lg xl:px-10 xl:text-left"
     >
       <div className="space-y-6 xl:space-y-10">
@@ -24,11 +25,9 @@ export const SheepProfile = ({ data }: Props) => {
             <p className="text-gray-400 text-sm">
               {dayjs(data.dateOfBirth).format("D MMMM YYYY")}
             </p>
-            <p className="text-white text-sm pt-3">
-              {data.description.json.content.map((item) =>
-                item.content.map((item) => item.value)
-              )}
-            </p>
+            <div className="text-white text-sm pt-3">
+              <ContentfulRichText data={data?.description.json} />
+            </div>
           </div>
         </div>
       </div>

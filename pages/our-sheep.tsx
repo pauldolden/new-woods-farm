@@ -32,7 +32,7 @@ const oursheep = ({ data, pageData }: Props) => {
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {data.items.map((sheep) => (
-              <SheepProfile data={sheep} />
+              <SheepProfile key={sheep.name} data={sheep} />
             ))}
           </div>
         </div>
@@ -41,7 +41,7 @@ const oursheep = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const sheep = await fetchAllSheepProfiles(preview);
   const pageData = await fetchOurSheepPageData(preview);
 

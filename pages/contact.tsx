@@ -39,7 +39,7 @@ const contact = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const formData = await fetchContactForm(preview);
   const pageData = await fetchContactPageData(preview);
 

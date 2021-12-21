@@ -27,7 +27,10 @@ const gallery = ({ data, pageData }: Props) => {
       {openLightbox && (
         <Lightbox
           mainSrc={imageSrc}
-          onCloseRequest={() => setOpenLightbox(false)}
+          onCloseRequest={() => {
+            setImageSrc("");
+            setOpenLightbox(false);
+          }}
         />
       )}
       <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 h-full">
@@ -76,7 +79,7 @@ const gallery = ({ data, pageData }: Props) => {
   );
 };
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const images = await fetchAllImages(preview);
   const pageData = await fetchGalleryPageData(preview);
 

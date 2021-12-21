@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { NewsArticleData } from "../types/AllNewsArticles";
+import { ContentfulRichText } from "./ContentfulRichText";
 dayjs.extend(relativeTime);
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 
 export const Article = ({ data }: Props) => {
   return (
-    <Link href={`/news/${data.sys.id}`} key={data.title}>
+    <Link href={`/news/${data.sys.id}`}>
       <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer">
         <div className="flex-shrink-0">
           <img
@@ -23,7 +24,10 @@ export const Article = ({ data }: Props) => {
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
             {data?.contentfulMetadata?.tags?.map((tag) => (
-              <p key={tag.name} className="text-sm font-medium text-green-600">
+              <p
+                key={tag.name || String(Math.random() * 10000)}
+                className="text-sm font-medium text-green-600"
+              >
                 {tag?.name}
               </p>
             ))}
@@ -32,11 +36,9 @@ export const Article = ({ data }: Props) => {
               <p className="text-xl font-semibold text-gray-900 block mt-2">
                 {data?.title}
               </p>
-              <p className="mt-3 text-base text-gray-500">
-                {data?.description?.json?.content?.map((item) =>
-                  item.content.map((item) => item.value)
-                )}
-              </p>
+              <div className="mt-3 text-base text-gray-500">
+                <ContentfulRichText data={data.content.json} />
+              </div>
             </div>
           </div>
           <div className="mt-6 flex items-center">

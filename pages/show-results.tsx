@@ -110,7 +110,7 @@ const showresults = ({ data }: Props) => {
   );
 };
 
-export async function getStaticProps({ params, preview }) {
+export async function getServerSideProps({ params, preview }) {
   const results = await fetchAllShowResults(preview);
 
   return {
