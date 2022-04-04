@@ -11,6 +11,8 @@ interface Props {
 }
 
 export const Article = ({ data }: Props) => {
+  console.log(data);
+
   return (
     <Link href={`/news/${data.sys.id}`}>
       <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer">
@@ -36,9 +38,9 @@ export const Article = ({ data }: Props) => {
               <p className="text-xl font-semibold text-gray-900 block mt-2">
                 {data?.title}
               </p>
-              <div className="mt-3 text-base text-gray-500">
-                <ContentfulRichText data={data.description.json} />
-              </div>
+              {/* <div className="mt-3 text-base text-gray-500">
+                <ContentfulRichText data={data?.description} />
+              </div> */}
             </div>
           </div>
           <div className="mt-6 flex items-center">
