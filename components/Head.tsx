@@ -13,6 +13,10 @@ export const Head = (props: Props) => {
         href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap"
         rel="stylesheet"
       />
+      <meta
+        name="description"
+        content="New Woods Farm Premium Quality Ryelands"
+      />
     </NextHead>
   );
 };
