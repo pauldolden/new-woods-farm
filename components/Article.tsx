@@ -11,8 +11,6 @@ interface Props {
 }
 
 export const Article = ({ data }: Props) => {
-  console.log(data);
-
   return (
     <Link href={`/news/${data.sys.id}`}>
       <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer">
