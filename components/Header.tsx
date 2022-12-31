@@ -77,9 +77,6 @@ export const Header = (props: Props) => {
                   </Link>
                 ))}
               </div>
-              <div className="bg-[#f26422] w-10 h-10 ml-20 cursor-pointer flex items-center justify-center rounded-full">
-                <FaEtsy className="text-white" size={20} />
-              </div>
             </div>
           </div>
         </div>
