@@ -40,10 +40,10 @@ const gallery = ({ data, pageData }: Props) => {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              {pageData.pageTitle}
+              {pageData?.pageTitle}
             </h2>
             <div className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              <ContentfulRichText data={pageData.pageContent.json} />
+              <ContentfulRichText data={pageData?.pageContent.json} />
             </div>
           </div>
 
@@ -58,17 +58,17 @@ const gallery = ({ data, pageData }: Props) => {
                   className="group block w-full aspect-w-10 aspect-h-7 select-none rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-green-500 overflow-hidden"
                 >
                   <img
-                    src={file.url}
-                    alt={file.description}
+                    src={file?.url}
+                    alt={file?.description}
                     className="object-cover pointer-events-none group-hover:opacity-75"
                   />
 
                   <span className="sr-only">
-                    View details for {file.description}
+                    View details for {file?.description}
                   </span>
                 </div>
                 <p className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">
-                  {file.description}
+                  {file?.description}
                 </p>
               </div>
             ))}

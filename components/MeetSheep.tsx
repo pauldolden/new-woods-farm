@@ -17,10 +17,10 @@ export const MeetSheep = ({ data }: Props) => {
         <div className="space-y-12">
           <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
             <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-              {data.sectionTitle}
+              {data?.sectionTitle}
             </h2>
             <div className="text-xl text-gray-300">
-              <ContentfulRichText data={data.sectionText.json} />
+              <ContentfulRichText data={data?.sectionText.json} />
             </div>
           </div>
           <ul
@@ -28,7 +28,7 @@ export const MeetSheep = ({ data }: Props) => {
             className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
           >
             {data?.sheepProfilesCollection.items?.map((sheep) => (
-              <SheepProfile data={sheep} key={sheep.name} />
+              <SheepProfile data={sheep} key={sheep?.name} />
             ))}
           </ul>
         </div>
