@@ -23,12 +23,12 @@ const FAQ = ({ data }: Props) => {
           <div className="mt-12 lg:mt-0 lg:col-span-2">
             <dl className="space-y-12">
               {data?.faQsCollection?.items?.map((faq) => (
-                <div key={faq.question}>
+                <div key={faq?.question}>
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    {faq.question}
+                    {faq?.question}
                   </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    {faq.answer.json.content.map((item) =>
+                    {faq?.answer.json.content.map((item) =>
                       item.content.map((item) => item.value)
                     )}
                   </dd>
