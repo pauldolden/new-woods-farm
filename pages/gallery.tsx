@@ -52,9 +52,9 @@ const gallery = ({ data, pageData }: Props) => {
             className="mt-12 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
           >
             {data.items.map((file) => (
-              <div className="relative cursor-pointer" key={file.url}>
+              <div className="relative cursor-pointer" key={file?.url}>
                 <div
-                  onClick={() => setImageSrc(file.url)}
+                  onClick={() => setImageSrc(file?.url)}
                   className="group block w-full aspect-w-10 aspect-h-7 select-none rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-green-500 overflow-hidden"
                 >
                   <img
