@@ -18,14 +18,14 @@ export const Article = ({ data }: Props) => {
           <img
             className="h-48 w-full object-cover"
             src={data?.previewImage?.url ?? "/sheep.jpg"}
-            alt={data.previewImage?.description ?? "Sheep"}
+            alt={data?.previewImage?.description ?? "Sheep"}
           />
         </div>
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
             {data?.contentfulMetadata?.tags?.map((tag) => (
               <p
-                key={tag.name || String(Math.random() * 10000)}
+                key={tag?.name || String(Math.random() * 10000)}
                 className="text-sm font-medium text-green-600"
               >
                 {tag?.name}
