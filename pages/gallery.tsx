@@ -43,7 +43,7 @@ const gallery = ({ data, pageData }: Props) => {
               {pageData?.pageTitle}
             </h2>
             <div className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              <ContentfulRichText data={pageData?.pageContent.json} />
+              <ContentfulRichText data={pageData?.pageContent?.json} />
             </div>
           </div>
 
